@@ -1,0 +1,192 @@
+.notes-page {
+  padding: 24px 20px;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* ================= HERO ================= */
+.notes-hero {
+  background-color: #f08a17;
+  padding: 56px 20px;
+  text-align: center;
+  border-radius: 22px;
+  margin-bottom: 40px;
+}
+
+.notes-hero h1 {
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+.notes-hero p {
+  font-size: 1.05rem;
+  color: #292828;
+}
+
+/* ================= NOTES LIST ================= */
+.notes-list-section {
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.notes-list-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.notes-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* CARD */
+.notes-card {
+  background: #ffffff;
+  padding: 20px 18px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.notes-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.15rem;
+}
+
+.notes-card .description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* FILE BOX */
+.file-box {
+  margin: 12px 0;
+  padding: 10px;
+  background: #f4f7ff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* BUTTONS */
+.view-btn,
+.download-notes-btn,
+.buy-btn {
+  width: 100%;
+  padding: 10px;
+  background: #f08a17;
+  color: #252525;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.view-btn:hover,
+.download-notes-btn:hover,
+.buy-btn:hover {
+  background: #cf7712;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* FREE / PAID BADGE */
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.free-badge,
+.paid-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.free-badge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.paid-badge {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* UPLOADED BY */
+.uploaded-by {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* ================= FLOATING ADD BUTTON ================= */
+.add-note-btn {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: #f08a17;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.add-note-btn:hover {
+  background: #cf7712;
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .notes-hero h1 {
+    font-size: 2rem;
+  }
+
+  .notes-hero p {
+    font-size: 0.95rem;
+  }
+
+  .add-note-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-page {
+    padding: 16px 12px;
+  }
+
+  .notes-card {
+    padding: 16px;
+  }
+
+  .notes-list-section h2 {
+    font-size: 1.4rem;
+  }
+}

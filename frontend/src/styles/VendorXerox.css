@@ -1,0 +1,236 @@
+/* ---------- PAGE ---------- */
+.vendor-xerox-page {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- HERO ---------- */
+.vendor-hero-xerox {
+  background: linear-gradient(120deg, #059669, #4ae0b1);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vendor-hero-xerox h1 {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+}
+
+.vendor-hero-xerox p {
+  opacity: 0.9;
+}
+
+/* ---------- TABS ---------- */
+.vendor-tabs-xerox {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.vendor-tabs-xerox button {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: #e0e7ff;
+  color: #059669;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.vendor-tabs-xerox button.active,
+.vendor-tabs-xerox button:hover {
+  background: #059669;
+  color: white;
+}
+
+/* ---------- FORM ---------- */
+.form-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-card input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+.form-card input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* ---------- BUTTONS ---------- */
+.primary-btn {
+  background: #059669;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #047857;
+}
+
+.danger-btn {
+  background: #ef4444;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 11px;
+  margin-top: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.danger-btn:hover {
+  background: #dc2626;
+}
+
+/* ---------- ITEMS ---------- */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.item-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* ---------- AVAILABILITY ---------- */
+.availability.on {
+  color: #059669;
+  font-weight: 600;
+}
+
+.availability.off {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ---------- ORDERS ---------- */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.order-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #4f46e5;
+}
+
+/* ---------- DOWNLOAD ---------- */
+.download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #4f46e5;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background: #4338ca;
+}
+
+/* ---------- STATUS ---------- */
+.status-section select {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+.status-section select:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+
+.vendor-sub-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 24px 0 32px;
+}
+
+.vendor-sub-tabs button {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1.5px solid #d1fae5;
+  background: #ecfdf5;
+  color: #047857;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.vendor-sub-tabs button:hover {
+  background: #d1fae5;
+  transform: translateY(-1px);
+}
+
+/* Active tab */
+.vendor-sub-tabs button.active {
+  background: linear-gradient(120deg, #059669, #047857);
+  color: white;
+  border-color: #047857;
+  box-shadow: 0 6px 14px rgba(5, 150, 105, 0.25);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .vendor-sub-tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .vendor-sub-tabs button {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+  }
+}

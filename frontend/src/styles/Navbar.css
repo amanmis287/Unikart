@@ -1,0 +1,142 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 12px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+/* LOGOS */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+
+.logo2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #cbd5f5;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  transition: color 0.2s ease-in;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* USER */
+.welcome-msg {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* LOGOUT */
+.logout-btn {
+  background-color: #f43f5e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #e11d48;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 4px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: #1e293b;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .logo2 {
+    margin: 0;
+  }
+
+  .logout-btn {
+    width: 20%;
+    justify-content: center;
+  }
+}
+
+.app-logo {
+  height: 42px;
+  width: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .app-logo {
+    height: 36px;
+  }
+}
+

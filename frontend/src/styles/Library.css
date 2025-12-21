@@ -1,0 +1,292 @@
+/* ================= ROOT ================= */
+.library-container {
+  padding: 24px;
+  font-family: "Poppins", sans-serif;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* ================= HERO ================= */
+.library-hero {
+  background-color: #ad8dee;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 18px;
+  margin-bottom: 35px;
+}
+
+.library-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.library-hero p {
+  font-size: 1.1rem;
+  color: #2f2f2f;
+  opacity: 0.9;
+}
+
+/* ================= TABS ================= */
+.library-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 35px;
+}
+
+.library-tabs button {
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: none;
+  background: #e5def8;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.library-tabs button.active {
+  background: #ad8dee;
+}
+
+.library-tabs button:hover {
+  opacity: 0.9;
+}
+
+/* ================= BOOK SECTION ================= */
+.book-section {
+  text-align: center;
+}
+
+/* ================= BOOK GRID ================= */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+/* ================= BOOK CARD ================= */
+.book-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+}
+
+.book-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.book-card h3 {
+  margin: 14px 0 4px;
+  font-size: 1.15rem;
+}
+
+.author {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.rent {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* ================= AVAILABILITY ================= */
+.availability {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.availability.on {
+  color: #16a34a;
+}
+
+.availability.off {
+  color: #dc2626;
+}
+
+/* ================= RENT BUTTON ================= */
+.rent-btn {
+  margin-top: 14px;
+  padding: 10px 22px;
+  border: none;
+  background: #ad8dee;
+  color: #292828;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.rent-btn:hover {
+  background: #8669c0;
+  transform: translateY(-2px);
+}
+
+.rent-btn:disabled {
+  background: #d1c6ef;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ================= RENT HISTORY ================= */
+.history-section {
+  max-width: 900px;
+  margin: auto;
+}
+
+.history-section h2 {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+/* ================= RENT TABLE ================= */
+.rent-table {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ================= RENT ROW ================= */
+.rent-row {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.rent-main h4 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.rent-main .author {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.rent-main .meta {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #444;
+}
+
+/* RIGHT SIDE */
+.rent-side {
+  text-align: right;
+}
+
+.request-id {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* ================= STATUS BADGES ================= */
+.status {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status.REQUESTED {
+  background: #fde68a;
+}
+
+.status.AVAILED {
+  background: #bbf7d0;
+}
+
+.status.DONE {
+  background: #e5e7eb;
+}
+
+/* ================= POPUP ================= */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-card {
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-card h2 {
+  margin-bottom: 6px;
+}
+
+.popup-card select,
+.popup-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+/* ================= PAYMENT ================= */
+.pay-rent-btn {
+  width: 100%;
+  background: #ad8dee;
+  color: #292828;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 14px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.pay-rent-btn:hover {
+  background: #8669c0;
+}
+
+.close-btn {
+  width: 100%;
+  background: #ef4444;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}

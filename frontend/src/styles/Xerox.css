@@ -1,0 +1,269 @@
+/* ================= XEROX PAGE ================= */
+.xerox-page {
+  padding: 32px 20px;
+  font-family: "Poppins", sans-serif;
+  max-width: 860px;
+  margin: auto;
+}
+
+.xerox-page h1 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #064e3b;
+}
+
+/* ================= FORM CARD ================= */
+.form-card {
+  background: linear-gradient(135deg, #ffffff, #f9fafb);
+  padding: 26px 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ================= INPUTS ================= */
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+input[type="file"] {
+  border: 1.5px dashed #d1d5db;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+input[type="number"],
+input[type="text"],
+textarea,
+select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid #d1d5db;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: 0.2s ease;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15);
+}
+
+/* ================= TOTAL ================= */
+h3 {
+  margin-top: 6px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #047857;
+}
+
+/* ================= SUBMIT BUTTON ================= */
+.submit-btn {
+  background: linear-gradient(120deg, #059669, #047857);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ================= TABS ================= */
+.xerox-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 24px 0 30px;
+  padding: 10px;
+  background: #ecfdf5;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.xerox-tab-btn {
+  padding: 10px 22px;
+  background: transparent;
+  color: #047857;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.xerox-tab-btn:hover {
+  background: #d1fae5;
+}
+
+.xerox-tab-btn.active {
+  background: linear-gradient(120deg, #059669, #047857);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .form-card {
+    padding: 22px 20px;
+  }
+
+  .xerox-tab-btn {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ================= XEROX ORDER HISTORY ================= */
+
+.history-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0 30px;
+}
+
+.history-section h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 26px;
+  color: #064e3b;
+}
+
+/* Order cards container */
+.history-section .history-card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  padding: 20px 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 18px;
+  position: relative;
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+/* Left accent bar */
+.history-section .history-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(180deg, #059669, #047857);
+}
+
+.history-section .history-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.history-section .history-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Highlight important text */
+.history-section .history-card strong {
+  color: #111827;
+}
+
+/* Payment badge */
+.payment-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.payment-badge.PAID {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.payment-badge.PENDING {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Order status badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.status-badge.Pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.Accepted {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-badge.Completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Xerox-specific info */
+.xerox-meta {
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 3px solid #059669;
+}
+
+.xerox-meta p {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Amount */
+.xerox-amount {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #047857;
+}
+
+/* Empty state */
+.history-section p {
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+}

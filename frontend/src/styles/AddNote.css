@@ -1,0 +1,114 @@
+.addnotes-container {
+  padding: 32px 20px;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* HERO */
+.addnotes-hero {
+  background-color: #f08a17;
+  padding: 56px 20px;
+  text-align: center;
+  border-radius: 22px;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.addnotes-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.addnotes-hero p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* FORM CARD */
+.addnote-form {
+  max-width: 520px;
+  margin: auto;
+  padding: 30px 28px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* LABELS */
+.addnote-form label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* INPUTS */
+.addnote-form input,
+.addnote-form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.addnote-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.addnote-form input:focus,
+.addnote-form textarea:focus {
+  outline: none;
+  border-color: #f08a17;
+  box-shadow: 0 0 0 2px rgba(240, 138, 23, 0.2);
+}
+
+.addnote-form select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+}
+
+.addnote-form select:focus {
+  outline: none;
+  border-color: #f08a17;
+  box-shadow: 0 0 0 2px rgba(240, 138, 23, 0.2);
+}
+
+
+/* BUTTON */
+.addnote-form button {
+  margin-top: 26px;
+  width: 100%;
+  padding: 12px;
+  background: #f08a17;
+  color: #020202;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.addnote-form button:hover {
+  background: #c97413;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.addnote-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
