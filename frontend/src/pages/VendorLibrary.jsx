@@ -18,7 +18,7 @@ const VendorLibrary = () => {
   const loadBooks = useCallback(async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/library/vendor/books",
+        `${process.env.REACT_APP_API_URL}/api/library/vendor/books`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -38,7 +38,7 @@ const VendorLibrary = () => {
   const loadRents = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/library/vendor/rents",
+        `${process.env.REACT_APP_API_URL}/api/library/vendor/rents`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -59,7 +59,7 @@ const VendorLibrary = () => {
       const imgData = new FormData();
       imgData.append("image", image);
 
-      const uploadRes = await fetch("http://localhost:5000/api/upload", {
+      const uploadRes = await fetch(`${process.env.REACT_APP_API_URL}/api/upload`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: imgData,
@@ -68,7 +68,7 @@ const VendorLibrary = () => {
       const uploadResult = await uploadRes.json();
       const imageUrl = uploadResult.imageUrl;
 
-      await fetch("http://localhost:5000/api/library/vendor/add-book", {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/library/vendor/add-book`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ const VendorLibrary = () => {
   /* ================= TOGGLE AVAILABILITY ================= */
   const toggleAvailability = async (id) => {
     await fetch(
-      `http://localhost:5000/api/library/vendor/toggle/${id}`,
+      `${process.env.REACT_APP_API_URL}/api/library/vendor/toggle/${id}`,
       {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
@@ -112,7 +112,7 @@ const VendorLibrary = () => {
     if (!window.confirm("Delete this book?")) return;
 
     await fetch(
-      `http://localhost:5000/api/library/vendor/${id}`,
+      `${process.env.REACT_APP_API_URL}/api/library/vendor/${id}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
@@ -125,7 +125,7 @@ const VendorLibrary = () => {
   /* ================= UPDATE RENT STATUS ================= */
   const updateRentStatus = async (id, status) => {
     await fetch(
-      `http://localhost:5000/api/library/vendor/rent/${id}/status`,
+      `${process.env.REACT_APP_API_URL}/api/library/vendor/rent/${id}/status`,
       {
         method: "PUT",
         headers: {

@@ -27,7 +27,7 @@ const AddNote = () => {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5000/api/notes", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/notes`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

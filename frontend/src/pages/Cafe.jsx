@@ -16,7 +16,7 @@ const Cafe = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/cafe");
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/cafe`);
         const data = await res.json();
         setMenuItems(data || []);
       } catch (error) {
@@ -35,7 +35,7 @@ const Cafe = () => {
 
     try {
       setLoadingOrders(true);
-      const res = await fetch("http://localhost:5000/api/orders/my-orders", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/my-orders`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -83,7 +83,7 @@ const Cafe = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders/create-order", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: selectedItem.price }),
@@ -106,7 +106,7 @@ const Cafe = () => {
         handler: async function (response) {
           try {
             const saveRes = await fetch(
-              "http://localhost:5000/api/orders/save",
+              `${process.env.REACT_APP_API_URL}/api/orders/save`,
               {
                 method: "POST",
                 headers: {

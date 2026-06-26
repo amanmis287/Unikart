@@ -16,7 +16,7 @@ const VendorXerox = () => {
   /* ---------------- STATIONERY ITEMS ---------------- */
   const loadItems = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/stationery/vendor", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/stationery/vendor`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -38,7 +38,7 @@ const VendorXerox = () => {
       const imgData = new FormData();
       imgData.append("image", image);
 
-      const uploadRes = await fetch("http://localhost:5000/api/upload", {
+      const uploadRes = await fetch(`${process.env.REACT_APP_API_URL}/api/upload`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: imgData,
@@ -47,7 +47,7 @@ const VendorXerox = () => {
       const uploadResult = await uploadRes.json();
       const imageUrl = uploadResult.imageUrl;
 
-      await fetch("http://localhost:5000/api/stationery/add", {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/stationery/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const VendorXerox = () => {
 
   /* ---------------- TOGGLE / DELETE ---------------- */
   const toggleAvailability = async (id) => {
-    await fetch(`http://localhost:5000/api/stationery/toggle/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/stationery/toggle/${id}`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -78,7 +78,7 @@ const VendorXerox = () => {
 
   const deleteItem = async (id) => {
     if (!window.confirm("Delete this item?")) return;
-    await fetch(`http://localhost:5000/api/stationery/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/stationery/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -88,7 +88,7 @@ const VendorXerox = () => {
   /* ---------------- LOAD ALL ORDERS ---------------- */
   const loadOrders = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/orders/all", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -99,7 +99,7 @@ const VendorXerox = () => {
   }, [token]);
 
   const updateStatus = async (id, status) => {
-    await fetch(`http://localhost:5000/api/orders/${id}/status`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/orders/${id}/status`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -239,7 +239,7 @@ const VendorXerox = () => {
                       <p>Size: {o.pageSize}</p>
 
                       <a
-                        href={`http://localhost:5000/${o.fileUrl}`}
+                        href={`${process.env.REACT_APP_API_URL}/${o.fileUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="download-btn"

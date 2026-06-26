@@ -13,7 +13,7 @@ const VendorCafe = () => {
 
   /* ---------------- MENU ITEMS ---------------- */
   const loadItems = () => {
-    fetch("http://localhost:5000/api/cafe")
+    fetch(`${process.env.REACT_APP_API_URL}/api/cafe`)
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error("Fetch error:", err));
@@ -32,7 +32,7 @@ const VendorCafe = () => {
     formData.append("image", image);
 
     try {
-      const res = await fetch("http://localhost:5000/api/cafe/add", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/cafe/add`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -55,7 +55,7 @@ const VendorCafe = () => {
   const toggleAvailability = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/cafe/${id}/availability`,
+        `${process.env.REACT_APP_API_URL}/api/cafe/${id}/availability`,
         {
           method: "PUT",
           headers: { Authorization: `Bearer ${token}` },
@@ -73,7 +73,7 @@ const VendorCafe = () => {
     if (!window.confirm("Are you sure?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/cafe/${id}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/cafe/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -87,7 +87,7 @@ const VendorCafe = () => {
   /* ---------------- VENDOR ORDERS (CAFÉ ONLY) ---------------- */
   const loadOrders = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/orders/all", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -104,7 +104,7 @@ const VendorCafe = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await fetch(`http://localhost:5000/api/orders/${id}/status`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/orders/${id}/status`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

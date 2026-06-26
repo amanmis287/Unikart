@@ -24,7 +24,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/stationery");
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/stationery`);
         const data = await res.json();
         setItems(Array.isArray(data) ? data : []);
       } catch (err) {
@@ -47,7 +47,7 @@ const Shop = () => {
     try {
       setLoadingOrders(true);
 
-      const res = await fetch("http://localhost:5000/api/orders/my-orders", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/my-orders`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -77,7 +77,7 @@ const Shop = () => {
     try {
       setPaying(true);
 
-      const res = await fetch("http://localhost:5000/api/orders/create-order", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: selectedItem.price }),
@@ -100,7 +100,7 @@ const Shop = () => {
 
         handler: async function (response) {
           try {
-            await fetch("http://localhost:5000/api/orders/save", {
+            await fetch(`${process.env.REACT_APP_API_URL}/api/orders/save`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

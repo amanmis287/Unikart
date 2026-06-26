@@ -8,7 +8,7 @@ const Notes = () => {
 
   /* FETCH NOTES */
   useEffect(() => {
-    fetch("http://localhost:5000/api/notes")
+    fetch(`${process.env.REACT_APP_API_URL}/api/notes`)
       .then((res) => res.json())
       .then((data) => setNotes(data))
       .catch((err) => console.error(err));
@@ -18,7 +18,7 @@ const Notes = () => {
   const downloadNote = async (noteId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/notes/download/${noteId}`,
+        `${process.env.REACT_APP_API_URL}/api/notes/download/${noteId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ const Notes = () => {
     try {
       // 1️⃣ Create Razorpay order
       const res = await fetch(
-        "http://localhost:5000/api/notes/payment/create",
+        `${process.env.REACT_APP_API_URL}/api/notes/payment/create`,
         {
           method: "POST",
           headers: {
@@ -71,7 +71,7 @@ const Notes = () => {
         description: note.title,
         handler: async function (response) {
           // 3️⃣ Verify payment
-          await fetch("http://localhost:5000/api/notes/payment/verify", {
+          await fetch(`${process.env.REACT_APP_API_URL}/api/notes/payment/verify`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

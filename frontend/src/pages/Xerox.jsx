@@ -28,7 +28,7 @@ const Xerox = () => {
   const fetchMyOrders = async () => {
     if (!token) return alert("Login first");
 
-    const res = await fetch("http://localhost:5000/api/orders/my-orders", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/my-orders`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -57,7 +57,7 @@ const Xerox = () => {
       setPaying(true);
 
       /* CREATE RAZORPAY ORDER */
-      const res = await fetch("http://localhost:5000/api/orders/create-order", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: totalCost() }),
@@ -97,7 +97,7 @@ const Xerox = () => {
             formData.append("razorpayPaymentId", response.razorpay_payment_id);
             formData.append("razorpaySignature", response.razorpay_signature);
 
-            await fetch("http://localhost:5000/api/xerox", {
+            await fetch(`${process.env.REACT_APP_API_URL}/api/xerox`, {
               method: "POST",
               headers: {
                 Authorization: `Bearer ${token}`,

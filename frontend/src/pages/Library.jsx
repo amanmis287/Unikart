@@ -17,7 +17,7 @@ const Library = () => {
   useEffect(() => {
     const loadBooks = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/library/books");
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/library/books`);
         const data = await res.json();
         setBooks(Array.isArray(data) ? data : []);
       } catch (err) {
@@ -32,7 +32,7 @@ const Library = () => {
     if (!token) return alert("Login first");
 
     try {
-      const res = await fetch("http://localhost:5000/api/library/my-rents", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/library/my-rents`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -53,7 +53,7 @@ const Library = () => {
     try {
       setPaying(true);
 
-      const res = await fetch("http://localhost:5000/api/orders/create-order", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/orders/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: totalCost }),
@@ -76,7 +76,7 @@ const Library = () => {
 
         handler: async function (response) {
           try {
-            await fetch("http://localhost:5000/api/library/rent", {
+            await fetch(`${process.env.REACT_APP_API_URL}/api/library/rent`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
